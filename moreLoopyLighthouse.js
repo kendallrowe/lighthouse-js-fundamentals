@@ -3,7 +3,6 @@
 function loopyLighthouse(range, multiples, words) {
   let biggerNumber;
   let smallerNumber;
-  let printString = "";
   
   // Evaluation of arguments to ensure they meet criteria to run function
   // Check that range, multiples, and words provided are 2 in length (pairs) 
@@ -24,25 +23,20 @@ function loopyLighthouse(range, multiples, words) {
     }
   }
 
+
   for (let num = smallerNumber; num <= biggerNumber; num++) {
 
     // Check for both conditions for LoopyLighthouse
     if ((num % multiples[0] === 0) && (num % multiples[1]) === 0){
-      printString += words[0] + words[1];
+      console.log(words[0] + words[1]);
     } else if (num % multiples[0] === 0) {
-      printString += words[0];
+      console.log(words[0]);
     } else if (num % multiples[1] === 0) {
-      printString += words[1];
+      console.log(words[1]);
     } else {
-      printString += num;
-    }
-
-    if (num !== biggerNumber) {
-      printString += "\n";
+      console.log(num);
     }
   }
-
-  return printString;
 }
 
-console.log(loopyLighthouse([15, 90], [2, 5], ["Batty", "Beacon"]));
+loopyLighthouse([15, 90], [2, 5], ["Batty", "Beacon"]);
